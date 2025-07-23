@@ -56,7 +56,7 @@ function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="/images/m.png"
+            src="/images/M.png"
             alt="Logo M"
             className="h-3 sm:h-3 md:h-4 lg:h-6 object-contain"
           />
