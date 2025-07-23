@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from '../components/Navbar.jsx'; // ← Add this import
 import Hero from '../components/Hero.jsx';
 import CaseStudies from '../components/CaseStudies.jsx';
 import Projects from '../components/Projects.jsx';
@@ -12,13 +13,13 @@ function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 2000); // Duration of intro
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="relative min-h-screen bg-black">
-      {/* Intro Symbol Animation */}
+      {/* Intro Animation */}
       <AnimatePresence>
         {showIntro && (
           <motion.div
@@ -37,9 +38,7 @@ function Home() {
               animate={{ scale: 70, rotate: 60 }}
               transition={{ duration: 1.5, ease: 'easeInOut' }}
             >
-              {/* Example: Triangle symbol */}
               <polygon points="50,10 90,90 10,90" />
-              {/* Swap the polygon with any symbol you want */}
             </motion.svg>
           </motion.div>
         )}
@@ -52,6 +51,8 @@ function Home() {
         animate={{ opacity: showIntro ? 0 : 1 }}
         transition={{ duration: 0.5, delay: showIntro ? 0 : 1 }}
       >
+        <Navbar /> {/* ← Navbar moved here */}
+
         <section id="hero">
           <Hero />
         </section>
