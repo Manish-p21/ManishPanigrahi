@@ -55,9 +55,12 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3 lg:py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <span className="text-sm sm:text-sm md:text-lg lg:text-3xl bg-gradient-to-r from-[#DAF1FF] to-purple-300 text-transparent bg-clip-text font-gotfridus leading-none">
-            M
-          </span>
+          <img
+            src="/images/m.png"
+            alt="Logo M"
+            className="h-3 sm:h-3 md:h-4 lg:h-6 object-contain"
+          />
+
           <span className="text-white text-sm sm:text-sm md:text-lg lg:text-2xl font-bold tracking-wide">
             MyPortfolio
           </span>
