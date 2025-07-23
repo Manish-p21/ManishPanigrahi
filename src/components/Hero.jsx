@@ -113,7 +113,7 @@ function Hero() {
       </div>
 
       {/* Mobile Tags Layout — Icon Boxes */}
-      <div className="md:hidden absolute bottom-6 w-full px-6 z-20 flex flex-wrap justify-center gap-3">
+      <div className="md:hidden absolute bottom-20 w-full px-6 z-20 flex flex-wrap justify-center gap-3">
         {techBadges.map((badge, index) => (
           <motion.div
             key={index}
