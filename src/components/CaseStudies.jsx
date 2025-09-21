@@ -12,7 +12,7 @@ function CaseStudies() {
       id: 1,
       title: 'Diamond',
       subtitle: 'Real-Time Startup Metrics',
-      image: '/images/3.jpg',
+      image: '/images/1_1.jpg',
       fullImage: '/casestudies/Diamond.jpg',
       pdfLink: '/pdfs/Diamond.pdf',
       figmaLink: 'https://www.figma.com/proto/saas-analytics',
@@ -21,7 +21,7 @@ function CaseStudies() {
       id: 2,
       title: 'Habit Tracker',
       subtitle: 'Freelance Developer Site',
-      image: '/images/4.jpg',
+      image: '/images/4_1.jpg',
       fullImage: '/casestudies/Habit_Tracker.jpg',
       pdfLink: 'https://drive.google.com/drive/u/0/folders/1mwaqqycvMGQyR-mZtycGt6zCn2Z_jtGC',
       figmaLink: 'https://www.figma.com/proto/portfolio-redesign',
@@ -30,11 +30,12 @@ function CaseStudies() {
       id: 3,
       title: 'Careerly',
       subtitle: 'Scalable Backend',
-      image: '/images/5.jpg',
+      image: '/images/5_1.jpg',
       fullImage: '/casestudies/Careerly.jpg',
       pdfLink: 'https://drive.google.com/file/d/1R0aU6lL5chNCYHCYDCj_YJJDMXLqqEdk/view?usp=drive_link',
       figmaLink: 'https://www.figma.com/proto/event-ticketing',
     },
+
   ];
 
   useEffect(() => {
@@ -108,7 +109,7 @@ function CaseStudies() {
                   alt={study.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0  transition-opacity duration-300 group-hover:opacity-100" />
               </div>
 
               {hoveredId === study.id && (
