@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaRegCopy } from 'react-icons/fa';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [copied, setCopied] = useState(false);
+  const email = 'manishpanigrahi.official@gmail.com';
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -10,6 +12,16 @@ function Contact() {
     e.preventDefault();
     alert('Message sent successfully!');
     setForm({ name: '', email: '', message: '' });
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleEmailClick = () => {
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, '_blank');
   };
 
   return (
@@ -86,12 +98,26 @@ function Contact() {
               <h4 className="text-sm font-semibold">Email Me</h4>
             </div>
             <p className="text-white/60 text-sm mb-1">Feel free to write me anytime.</p>
-            <a
-              href="manishpanigrahi.official@gmail.com"
-              className="inline-block text-sm text-purple-400 font-medium hover:underline"
-            >
-              manishpanigrahi.official@gmail.com
-            </a>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleEmailClick}
+                className="inline-block text-sm text-purple-400 font-medium hover:underline"
+              >
+                {email}
+              </button>
+              <button
+                onClick={handleCopy}
+                className="text-purple-400 hover:text-purple-300 transition"
+                title="Copy Email"
+              >
+                <FaRegCopy />
+              </button>
+              {copied && (
+                <span className="text-xs text-green-400 ml-2 transition-opacity">
+                  Copied!
+                </span>
+              )}
+            </div>
           </div>
 
           {/* Phone */}
@@ -116,7 +142,6 @@ function Contact() {
               <h4 className="text-sm font-semibold">Location</h4>
             </div>
             <p className="text-white/60 text-sm mb-1">Based in Mumbai, India</p>
-            
           </div>
         </div>
       </div>
