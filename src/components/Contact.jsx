@@ -87,10 +87,10 @@ function Contact() {
             </div>
             <p className="text-white/60 text-sm mb-1">Feel free to write me anytime.</p>
             <a
-              href="mailto:email@gmail.com"
+              href="manishpanigrahi.official@gmail.com"
               className="inline-block text-sm text-purple-400 font-medium hover:underline"
             >
-              email@gmail.com
+              manishpanigrahi.official@gmail.com
             </a>
           </div>
 
@@ -102,10 +102,10 @@ function Contact() {
             </div>
             <p className="text-white/60 text-sm mb-1">Mon–Sat, 10AM–6PM</p>
             <a
-              href="tel:+917777777777"
+              href="tel:+917021852372"
               className="inline-block text-sm text-purple-400 font-medium hover:underline"
             >
-              +91 77777 77777
+              +91 70218 52372
             </a>
           </div>
 
@@ -116,14 +116,7 @@ function Contact() {
               <h4 className="text-sm font-semibold">Location</h4>
             </div>
             <p className="text-white/60 text-sm mb-1">Based in Mumbai, India</p>
-            <a
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-sm text-purple-400 font-medium hover:underline"
-            >
-              View on Google Maps
-            </a>
+            
           </div>
         </div>
       </div>
