@@ -24,7 +24,7 @@ function CaseStudies() {
       image: '/images/4_1.jpg',
       fullImage: '/casestudies/Habit_Tracker.jpg',
       pdfLink: 'https://drive.google.com/drive/u/0/folders/1mwaqqycvMGQyR-mZtycGt6zCn2Z_jtGC',
-      figmaLink: 'https://www.figma.com/proto/portfolio-redesign',
+      figmaLink: 'https://www.figma.com/design/LNHqW1zfV2AvZzzyy9erLR/habit-tracker--Copy-?node-id=504-5922&t=zUTkSmBLMlXaaFAt-1',
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ function CaseStudies() {
       image: '/images/5_1.jpg',
       fullImage: '/casestudies/Careerly.jpg',
       pdfLink: 'https://drive.google.com/file/d/1R0aU6lL5chNCYHCYDCj_YJJDMXLqqEdk/view?usp=drive_link',
-      figmaLink: 'https://www.figma.com/proto/event-ticketing',
+      figmaLink: 'https://www.figma.com/design/TOCfB4FP5MA862rV83zUjQ/Untitled?node-id=0-1&t=EHRk3nHnF999BOrV-1',
     },
 
   ];
