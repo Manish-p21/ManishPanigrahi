@@ -15,7 +15,7 @@ function CaseStudies() {
       image: '/images/1_1.jpg',
       fullImage: '/casestudies/Diamond.jpg',
       pdfLink: '/pdfs/Diamond.pdf',
-      figmaLink: 'https://www.figma.com/proto/saas-analytics',
+      figmaLink: 'https://www.figma.com/design/HwNPHcjaKIDpJASYjs1AXQ/Diamond-App?node-id=0-1&t=Kb097Tvk4XiJ0ND7-1',
     },
     {
       id: 2,

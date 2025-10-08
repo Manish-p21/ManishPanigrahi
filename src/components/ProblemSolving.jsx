@@ -117,7 +117,7 @@ function ProblemSolving() {
         </div>
       ),
     },
-    {
+    /*{
       step: '/04',
       title: 'Optimizing React Performance',
       description: 'Reducing re-renders in a data-heavy dashboard.',
@@ -316,7 +316,7 @@ function ProblemSolving() {
           </p>
         </div>
       ),
-    },
+    },*/
   ];
 
   return (
