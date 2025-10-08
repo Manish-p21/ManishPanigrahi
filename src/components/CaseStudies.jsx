@@ -1,10 +1,44 @@
 import { useState, useEffect, useRef } from 'react';
 import { HiOutlineX, HiDocumentText, HiLink } from 'react-icons/hi';
 
+// Skeleton CSS styles (add this to your CSS file or a `<style>` tag)
+const skeletonStyles = `
+  .skeleton {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 1.5s infinite;
+  }
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+`;
+
 function CaseStudies() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hoveredId, setHoveredId] = useState(null);
   const [openPopup, setOpenPopup] = useState(null);
+  const [isImageLoading, setIsImageLoading] = useState(true); // New state for image loading
   const popupRef = useRef(null);
 
   const caseStudies = [
@@ -35,7 +69,6 @@ function CaseStudies() {
       pdfLink: 'https://drive.google.com/file/d/1R0aU6lL5chNCYHCYDCj_YJJDMXLqqEdk/view?usp=drive_link',
       figmaLink: 'https://www.figma.com/design/TOCfB4FP5MA862rV83zUjQ/Untitled?node-id=0-1&t=EHRk3nHnF999BOrV-1',
     },
-
   ];
 
   useEffect(() => {
@@ -49,6 +82,7 @@ function CaseStudies() {
     function handleClickOutside(event) {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
         setOpenPopup(null);
+        setIsImageLoading(true); // Reset loading state when popup closes
       }
     }
     if (openPopup) {
@@ -70,6 +104,9 @@ function CaseStudies() {
         backgroundPosition: 'center',
       }}
     >
+      {/* Add skeleton styles to the page */}
+      <style>{skeletonStyles}</style>
+
       <div className="absolute inset-0 bg-black/75 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -92,7 +129,10 @@ function CaseStudies() {
                 const y = e.clientY - rect.top;
                 setCursor({ x, y });
               }}
-              onClick={() => setOpenPopup(study.id)}
+              onClick={() => {
+                setOpenPopup(study.id);
+                setIsImageLoading(true); // Set loading to true when opening popup
+              }}
             >
               <div className="p-4 z-10 relative pointer-events-none">
                 <p className="text-xs uppercase text-gray-400 tracking-wide">
@@ -109,7 +149,7 @@ function CaseStudies() {
                   alt={study.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0  transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
 
               {hoveredId === study.id && (
@@ -137,17 +177,30 @@ function CaseStudies() {
               ref={popupRef}
               className="relative bg-[#0B0F14] border border-white/10 rounded-lg w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-full max-h-[90vh] overflow-y-auto p-4 sm:p-6 md:p-6"
             >
-              {/* Image */}
+              {/* Skeleton or Image */}
+              {isImageLoading && (
+                <div
+                  className="skeleton w-full"
+                  style={{ height: '500px' }} // Adjust height to match your image's expected size
+                />
+              )}
               <img
                 src={caseStudies.find((s) => s.id === openPopup)?.fullImage}
                 alt="Full Case Study"
-                className="w-full h-auto object-contain rounded-lg"
+                className={`w-full h-auto object-contain rounded-lg ${
+                  isImageLoading ? 'hidden' : 'block'
+                }`} // Hide image while loading
+                onLoad={() => setIsImageLoading(false)} // Update state when image loads
+                onError={() => setIsImageLoading(false)} // Handle error case
               />
 
               {/* Popup Buttons */}
               <div className="flex flex-col gap-4 mt-4 md:mt-0 md:fixed md:top-40 md:right-[115px] z-[9999]">
                 <button
-                  onClick={() => setOpenPopup(null)}
+                  onClick={() => {
+                    setOpenPopup(null);
+                    setIsImageLoading(true); // Reset loading state
+                  }}
                   className="flex items-center gap-2 border-4 border-gray-500/20 text-[#DAF1FF] hover:text-purple-400 bg-black/50 backdrop-blur-md p-2 rounded-full"
                 >
                   <HiOutlineX className="text-2xl" />
