@@ -14,7 +14,7 @@ function CaseStudies() {
       subtitle: 'Real-Time Startup Metrics',
       image: '/images/1_1.jpg',
       fullImage: '/casestudies/Diamond.jpg',
-      pdfLink: '/pdfs/Diamond.pdf',
+      pdfLink: 'https://drive.google.com/file/d/1N7uPh89xJm3Fbwh17e1qYh9-vI4Vu2sp/view?usp=drive_link',
       figmaLink: 'https://www.figma.com/design/HwNPHcjaKIDpJASYjs1AXQ/Diamond-App?node-id=0-1&t=Kb097Tvk4XiJ0ND7-1',
     },
     {
@@ -23,7 +23,7 @@ function CaseStudies() {
       subtitle: 'Freelance Developer Site',
       image: '/images/4_1.jpg',
       fullImage: '/casestudies/Habit_Tracker.jpg',
-      pdfLink: 'https://drive.google.com/drive/u/0/folders/1mwaqqycvMGQyR-mZtycGt6zCn2Z_jtGC',
+      pdfLink: 'https://drive.google.com/file/d/1idZuomPfS2GB6Nq4g6iM1g9D-u6rqkN3/view?usp=drive_link',
       figmaLink: 'https://www.figma.com/design/LNHqW1zfV2AvZzzyy9erLR/habit-tracker--Copy-?node-id=504-5922&t=zUTkSmBLMlXaaFAt-1',
     },
     {
