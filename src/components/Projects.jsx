@@ -5,23 +5,14 @@ function Projects() {
     {
       name: 'Portfolio Website',
       description: 'Personal portfolio to showcase projects, case studies, and contact information.',
-      link: 'https://yourportfolio.live',
+      link: 'https://manishpanigrahi.vercel.app/',
       tech: 'React, Tailwind, Vite',
       date: '12 Oct 2019',
       location: 'Mumbai, India',
       logo: <HiOutlineGlobeAlt size={24} color="#A445ED" />,
       patternImage: '/images/7.jpg',
     },
-    {
-      name: 'E-commerce Tennis',
-      description: 'Modern e-commerce web app focused on performance, filtering, and scalability.',
-      link: 'https://yourportfolio.live',
-      tech: 'MySQL, Node, React',
-      date: '28 Dec 2019',
-      location: 'Mumbai, India',
-      logo: <HiOutlineShoppingCart size={24} color="#00AEEF" />,
-      patternImage: '/images/2.jpg',
-    },
+    
     {
       name: 'Real Estate Website',
       description: 'Property listings with filters, expert banners, and property detail flows.',
@@ -43,6 +34,16 @@ function Projects() {
       patternImage: '/images/4.jpg',
     },
     {
+      name: 'E-commerce Tennis',
+      description: 'Modern e-commerce web app focused on performance, filtering, and scalability.',
+      link: 'https://yourportfolio.live',
+      tech: 'MySQL, Node, React',
+      date: '28 Dec 2019',
+      location: 'Mumbai, India',
+      logo: <HiOutlineShoppingCart size={24} color="#00AEEF" />,
+      patternImage: '/images/2.jpg',
+    },
+    /*{
       name: 'AI B/W Image Colorization',
       description: 'Convert black and white images to colored using AI & ML model.',
       link: 'https://yourportfolio.live',
@@ -61,7 +62,7 @@ function Projects() {
       location: 'Mumbai, India',
       logo: <HiOutlineDatabase size={24} color="#F44336" />,
       patternImage: '/images/8.png',
-    },
+    },*/
   ];
 
   return (
